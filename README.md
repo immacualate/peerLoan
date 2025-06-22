@@ -1,3 +1,102 @@
+# AdanfoCash
+
+A decentralized lending platform built on the Internet Computer Protocol (ICP).
+
+## Quick Start
+
+1. Install dependencies:
+```bash
+cd src/AdanfoCash_frontend
+npm install
+```
+
+2. Start local replica:
+```bash
+dfx start --clean --background
+```
+
+3. Deploy canisters:
+```bash
+dfx deploy
+```
+
+4. Start development server:
+```bash
+npm start
+```
+
+Visit `http://localhost:3000`
+
+## Environment Setup
+
+Create `.env` in frontend directory:
+```
+VITE_LOAN_CANISTER_ID=your_loan_canister_id
+VITE_USER_CANISTER_ID=your_user_canister_id
+VITE_IDENTITY_CANISTER_ID=your_identity_canister_id
+```
+
+## Tech Stack
+
+- Frontend: React, TypeScript, Tailwind CSS, Radix UI
+- Backend: Motoko (Internet Computer)
+- State: React Context, React Query
+
+## Prerequisites
+
+- Node.js (v18 or later)
+- DFX (latest version)
+- Internet Computer Canister SDK
+
+## Project Structure
+
+```
+AdanfoCash/
+├── src/
+│   ├── AdanfoCash_backend/    # Backend canister code
+│   └── AdanfoCash_frontend/   # Frontend React application
+│       ├── public/
+│       └── src/
+│           ├── components/     # React components
+│           ├── contexts/       # React contexts
+│           ├── hooks/         # Custom React hooks
+│           ├── pages/         # Page components
+│           ├── services/      # API services
+│           └── utils/         # Utility functions
+├── dfx.json                   # DFX configuration
+└── package.json              # Project dependencies
+```
+
+## Development
+
+- The frontend is built with React, TypeScript, and Tailwind CSS
+- We use Radix UI for accessible components
+- State management is handled with React Context and React Query
+- The backend is built with Motoko on the Internet Computer
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+This will:
+1. Generate Candid interfaces
+2. Type check the TypeScript code
+3. Build the frontend for production
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 # `AdanfoCash`
 
 Welcome to your new `AdanfoCash` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
