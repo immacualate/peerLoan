@@ -1,18 +1,17 @@
 {
   "canisters": {
-    "AdanfoCash_backend": {
-      "main": "src/AdanfoCash_backend/main.mo",
+    "peerLoan_backend": {
+      "main": "src/peerLoan_backend/main.mo",
       "type": "motoko"
     },
-    "AdanfoCash_frontend": {
+    "peerLoan_frontend": {
       "dependencies": [
-        "AdanfoCash_backend"
+        "peerLoan_backend"
       ],
       "source": [
-        "src/AdanfoCash_frontend/dist"
+        "src/peerLoan_frontend/dist"
       ],
-      "type": "assets",
-      "workspace": "AdanfoCash_frontend"
+      "type": "assets"
     }
   },
   "defaults": {

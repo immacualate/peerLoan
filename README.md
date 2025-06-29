@@ -1,78 +1,118 @@
-# AdanfoCash
+# peerLoan
 
-A decentralized lending platform built on the Internet Computer Protocol (ICP).
+A decentralized peer-to-peer lending platform built on the Internet Computer Protocol (ICP).
+
+## Overview
+
+**peerLoan** enables users to request and offer loans directly, without intermediaries. The platform leverages smart contracts (canisters) written in Motoko to ensure transparency, security, and automation of lending processes. The frontend is a modern React application, providing an intuitive interface for borrowers and lenders.
+
+## Features
+
+- **Decentralized Lending:** Users can create loan requests or fund existing ones.
+- **Smart Contract Automation:** Loan agreements, repayments, and interest calculations are handled by Motoko canisters.
+- **User Authentication:** Secure login and identity management via Internet Identity.
+- **Real-time Updates:** React Query and Context provide responsive state management.
+- **Accessible UI:** Built with Radix UI and styled using Tailwind CSS.
 
 ## Quick Start
 
-1. Install dependencies:
+### 1. Install Dependencies
+
 ```bash
-cd src/AdanfoCash_frontend
+cd src/peerLoan_frontend
 npm install
 ```
 
-2. Start local replica:
+### 2. Start Local Replica
+
 ```bash
 dfx start --clean --background
 ```
 
-3. Deploy canisters:
+### 3. Deploy Canisters
+
 ```bash
 dfx deploy
 ```
 
-4. Start development server:
+### 4. Start Development Server
+
 ```bash
 npm start
 ```
 
-Visit `http://localhost:3000`
+Visit [http://localhost:3000](http://localhost:3000) to use the app.
 
 ## Environment Setup
 
-Create `.env` in frontend directory:
+Create a `.env` file in `src/peerLoan_frontend`:
+
 ```
 VITE_LOAN_CANISTER_ID=your_loan_canister_id
 VITE_USER_CANISTER_ID=your_user_canister_id
 VITE_IDENTITY_CANISTER_ID=your_identity_canister_id
 ```
 
+Replace the values with your deployed canister IDs.
+
 ## Tech Stack
 
-- Frontend: React, TypeScript, Tailwind CSS, Radix UI
-- Backend: Motoko (Internet Computer)
-- State: React Context, React Query
+- **Frontend:** React, TypeScript, Tailwind CSS, Radix UI
+- **Backend:** Motoko (Internet Computer)
+- **State Management:** React Context, React Query
+- **Build Tools:** Vite, DFX
 
 ## Prerequisites
 
 - Node.js (v18 or later)
-- DFX (latest version)
+- DFX SDK (latest version)
 - Internet Computer Canister SDK
 
 ## Project Structure
 
 ```
-AdanfoCash/
+peerLoan/
 ├── src/
-│   ├── AdanfoCash_backend/    # Backend canister code
-│   └── AdanfoCash_frontend/   # Frontend React application
+│   ├── peerLoan_backend/    # Motoko canister code (loan logic, user management)
+│   └── peerLoan_frontend/   # React app
 │       ├── public/
 │       └── src/
-│           ├── components/     # React components
-│           ├── contexts/       # React contexts
-│           ├── hooks/         # Custom React hooks
-│           ├── pages/         # Page components
-│           ├── services/      # API services
-│           └── utils/         # Utility functions
+│           ├── components/     # UI components (LoanList, LoanForm, etc.)
+│           ├── contexts/       # React Contexts (UserContext, LoanContext)
+│           ├── hooks/          # Custom hooks (useLoans, useUser)
+│           ├── pages/          # Page components (Dashboard, LoanDetails)
+│           ├── services/       # API services (canister interactions)
+│           └── utils/          # Utility functions
 ├── dfx.json                   # DFX configuration
-└── package.json              # Project dependencies
+└── package.json               # Project dependencies
 ```
+
+## Core Concepts
+
+### Loan Lifecycle
+
+1. **Request:** Borrower submits a loan request (amount, duration, interest).
+2. **Funding:** Lenders can fund open requests.
+3. **Agreement:** Once funded, a smart contract locks the terms.
+4. **Repayment:** Borrower repays according to schedule; contract enforces repayments.
+5. **Completion:** Upon full repayment, funds are released to the lender.
+
+### User Authentication
+
+- Uses Internet Identity for secure, decentralized authentication.
+- User data and loan history are stored in canisters.
+
+### Smart Contracts
+
+- Motoko canisters manage all loan logic, including validation, state transitions, and event logging.
+- Candid interfaces are generated for frontend-backend communication.
 
 ## Development
 
-- The frontend is built with React, TypeScript, and Tailwind CSS
-- We use Radix UI for accessible components
-- State management is handled with React Context and React Query
-- The backend is built with Motoko on the Internet Computer
+- **Frontend:** Built with React, TypeScript, and Tailwind CSS for rapid UI development.
+- **Backend:** Motoko canisters encapsulate business logic and data storage.
+- **State Management:** React Context and React Query ensure efficient data flow and caching.
+- **Testing:** Use DFX for local canister testing; Jest for frontend unit tests.
 
 ## Building for Production
 
@@ -81,78 +121,33 @@ npm run build
 ```
 
 This will:
-1. Generate Candid interfaces
-2. Type check the TypeScript code
-3. Build the frontend for production
+1. Generate Candid interfaces for canisters.
+2. Type check TypeScript code.
+3. Build the frontend for production deployment.
+
+## Deployment
+
+- Deploy canisters to the Internet Computer mainnet using `dfx deploy --network ic`.
+- Host the frontend on any static site provider or via the asset canister.
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/amazing-feature`).
+3. Commit your changes (`git commit -m 'Add some amazing feature'`).
+4. Push to your branch (`git push origin feature/amazing-feature`).
+5. Open a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-# `AdanfoCash`
+## Resources
 
-Welcome to your new `AdanfoCash` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+- [Internet Computer Developer Docs](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
+- [Motoko Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
+- [DFX SDK](https://internetcomputer.org/docs/current/developer-docs/setup/install)
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+---
 
-To learn more before you start working with `AdanfoCash`, see the following documentation available online:
-
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
-
-If you want to start working on your project right away, you might want to try the following commands:
-
-```bash
-cd AdanfoCash/
-dfx help
-dfx canister --help
-```
-
-## Running the project locally
-
-If you want to test your project locally, you can use the following commands:
-
-```bash
-# Starts the replica, running in the background
-dfx start --background
-
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
-
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
-
-If you have made changes to your backend canister, you can generate a new candid interface with
-
-```bash
-npm run generate
-```
-
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
-
-If you are making frontend changes, you can start a development server with
-
-```bash
-npm start
-```
-
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
-
-### Note on frontend environment variables
-
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+**peerLoan** is your gateway to decentralized lending on the Internet Computer. Explore, contribute, and help shape the future of peer-to-peer finance!
