@@ -142,6 +142,12 @@ This will:
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
+## Contact
+
+For support, questions, or business inquiries, please contact:
+- **Email**: immaculatesavingsloan@gmail.com
+- **GitHub**: [@immacualate](https://github.com/immacualate)
+
 ## Resources
 
 - [Internet Computer Developer Docs](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
@@ -151,3 +157,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ---
 
 **peerLoan** is your gateway to decentralized lending on the Internet Computer. Explore, contribute, and help shape the future of peer-to-peer finance!
+
+**Developed by**: immacualate <immaculatesavingsloan@gmail.com>

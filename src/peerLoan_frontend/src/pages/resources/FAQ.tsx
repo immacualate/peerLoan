@@ -104,7 +104,7 @@ const faqData: FAQCategory[] = [
       },
       {
         question: "What should I do if I suspect fraudulent activity on my account?",
-        answer: "If you notice any suspicious activity, immediately contact our security team at security@peerloan.com or use the emergency contact form in your account dashboard. We recommend changing your password immediately."
+        answer: "If you notice any suspicious activity, immediately contact our security team at immaculatesavingsloan@gmail.com or use the emergency contact form in your account dashboard. We recommend changing your password immediately."
       }
     ]
   }

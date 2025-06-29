@@ -107,7 +107,7 @@ const PrivacyPolicy: React.FC = () => {
                   peerLoan<br />
                   123 Finance Street<br />
                   Accra, Ghana<br />
-                  Email: privacy@peerloan.com<br />
+                  Email: immaculatesavingsloan@gmail.com<br />
                   Phone: +233 123 456 789
                 </p>
               </div>

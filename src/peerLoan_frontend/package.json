@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "immacualate <immaculatesavingsloan@gmail.com>",
   "scripts": {
     "setup": "npm i && dfx canister create peerLoan_backend && dfx generate peerLoan_backend && dfx deploy",
     "start": "vite --port 3000",

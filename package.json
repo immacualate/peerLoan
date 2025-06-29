@@ -4,6 +4,7 @@
     "npm": ">=7.0.0"
   },
   "name": "peer-loan",
+  "author": "immacualate <immaculatesavingsloan@gmail.com>",
   "scripts": {
     "build": "cd src/peerLoan_frontend && npm run build",
     "prebuild": "cd src/peerLoan_frontend && npm run prebuild",

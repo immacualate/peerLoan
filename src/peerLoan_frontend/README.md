@@ -175,8 +175,8 @@ The application is configured to work with ICP mainnet by default. No additional
 
 - **Documentation**: [docs.peerloan.com](https://docs.peerloan.com)
 - **Community**: [Discord Community](https://discord.com/channels/1119885301872070706/1280461670979993613)
-- **Support**: [support@peerloan.com](mailto:support@peerloan.com)
-- **Business Inquiries**: [partnerships@peerloan.com](mailto:partnerships@peerloan.com)
+- **Support**: [immaculatesavingsloan@gmail.com](mailto:immaculatesavingsloan@gmail.com)
+- **Business Inquiries**: [immaculatesavingsloan@gmail.com](mailto:immaculatesavingsloan@gmail.com)
 
 ## 📄 License
 
@@ -184,4 +184,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-**Built with ❤️ for African Education by the peerLoan Team**
+**Built with ❤️ for African Education by immacualate**
