@@ -1,0 +1,88 @@
+
+export const idlFactory = ({ IDL }) => {
+  return IDL.Service({
+    'createLoan': IDL.Func(
+      [IDL.Principal, IDL.Float64, IDL.Nat32, IDL.Text],
+      [IDL.Variant({ 'Ok': IDL.Text, 'Err': IDL.Text })],
+      [],
+    ),
+    'fundLoan': IDL.Func(
+      [IDL.Principal, IDL.Text],
+      [IDL.Variant({ 'Ok': IDL.Bool, 'Err': IDL.Text })],
+      [],
+    ),
+    'repayLoan': IDL.Func(
+      [IDL.Principal, IDL.Text, IDL.Float64],
+      [IDL.Variant({ 'Ok': IDL.Record({ 'creditScoreChange': IDL.Int32 }), 'Err': IDL.Text })],
+      [],
+    ),
+    'getUserLoans': IDL.Func(
+      [IDL.Principal],
+      [IDL.Vec(IDL.Record({
+        'id': IDL.Text,
+        'borrower': IDL.Principal,
+        'borrowerName': IDL.Text,
+        'lender': IDL.Opt(IDL.Principal),
+        'amount': IDL.Float64,
+        'duration': IDL.Nat32,
+        'purpose': IDL.Text,
+        'interestRate': IDL.Float64,
+        'monthlyPayment': IDL.Float64,
+        'totalRepayment': IDL.Float64,
+        'creditScore': IDL.Nat32,
+        'status': IDL.Text,
+        'createdAt': IDL.Text,
+        'description': IDL.Text,
+        'repaymentSchedule': IDL.Vec(IDL.Record({
+          'dueDate': IDL.Text,
+          'amount': IDL.Float64,
+          'isPaid': IDL.Bool,
+          'paidAt': IDL.Opt(IDL.Text),
+          'paidAmount': IDL.Opt(IDL.Float64),
+        })),
+      }))],
+      ['query'],
+    ),
+    'getPendingLoans': IDL.Func(
+      [],
+      [IDL.Vec(IDL.Record({
+        'id': IDL.Text,
+        'borrower': IDL.Principal,
+        'borrowerName': IDL.Text,
+        'lender': IDL.Opt(IDL.Principal),
+        'amount': IDL.Float64,
+        'duration': IDL.Nat32,
+        'purpose': IDL.Text,
+        'interestRate': IDL.Float64,
+        'monthlyPayment': IDL.Float64,
+        'totalRepayment': IDL.Float64,
+        'creditScore': IDL.Nat32,
+        'status': IDL.Text,
+        'createdAt': IDL.Text,
+        'description': IDL.Text,
+        'repaymentSchedule': IDL.Vec(IDL.Record({
+          'dueDate': IDL.Text,
+          'amount': IDL.Float64,
+          'isPaid': IDL.Bool,
+          'paidAt': IDL.Opt(IDL.Text),
+          'paidAmount': IDL.Opt(IDL.Float64),
+        })),
+      }))],
+      ['query'],
+    ),
+    'verifyStudent': IDL.Func(
+      [IDL.Principal, IDL.Record({
+        'fullName': IDL.Opt(IDL.Text),
+        'contactNumber': IDL.Opt(IDL.Text),
+        'hashedGhanaCard': IDL.Opt(IDL.Text),
+        'universityName': IDL.Text,
+        'studentId': IDL.Text,
+        'gpa': IDL.Float64,
+        'graduationDate': IDL.Text,
+        'isEnrolled': IDL.Bool,
+      })],
+      [IDL.Variant({ 'Ok': IDL.Bool, 'Err': IDL.Text })],
+      [],
+    ),
+  });
+};

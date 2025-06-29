@@ -1,0 +1,25 @@
+{
+  "canisters": {
+    "peerLoan_backend": {
+      "main": "src/peerLoan_backend/main.mo",
+      "type": "motoko"
+    },
+    "peerLoan_frontend": {
+      "dependencies": [
+        "peerLoan_backend"
+      ],
+      "source": [
+        "src/peerLoan_frontend/dist"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

@@ -1,0 +1,36 @@
+
+{
+  "canisters": {
+    "peerloan_backend": {
+      "main": "src/main.mo",
+      "type": "motoko"
+    },
+    "peerloan_frontend": {
+      "dependencies": [
+        "peerloan_backend"
+      ],ters": {
+    "adanfocash_backend": {
+      "main": "backend/main.mo",
+      "type": "motoko"
+    },
+    "adanfocash_frontend": {
+      "dependencies": [
+        "adanfocash_backend"
+      ],
+      "frontend": {
+        "entrypoint": "dist/index.html"
+      },
+      "source": [
+        "dist/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "version": 1
+}
